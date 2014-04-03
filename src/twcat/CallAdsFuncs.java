@@ -22,7 +22,7 @@ public class CallAdsFuncs {
         // Open communication
         nPort = AdsCallDllFunction.adsPortOpen();
         nErr = AdsCallDllFunction.getLocalAddress(addr);
-
+        addr.setNetIdString("10.255.255.6.1.1");
         addr.setPort(801);
         if (nErr != 0) {
             System.out.println("Error: Open Communication: 0x"

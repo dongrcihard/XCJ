@@ -8,14 +8,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <%--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">--%>
-    <%--<link rel="stylesheet" type="text/css" href="ExtJS/resources/css/ext-all.css"/>--%>
-    <%--<script type="text/javascript" src="ExtJS/ext-all.js"></script>--%>
-    <%--<script type="text/javascript" src="ExtJS/ext-lang-zh_CN.js"></script>--%>
-    <%--<script type="text/javascript" src="xcjdwr/engine.js"></script>--%>
-    <%--<script type="text/javascript" src="xcjdwr/util.js"></script>--%>
-    <%--<script type="text/javascript" src="xcjdwr/interface/CallAdsFuncs.js"></script>--%>
-    <%--<script type="text/javascript" src="JavaScript/timeclock.js"></script>--%>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="ExtJS/resources/css/ext-all.css"/>
+    <script type="text/javascript" src="ExtJS/ext-all.js"></script>
+    <script type="text/javascript" src="ExtJS/ext-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="dwr/engine.js"></script>
+    <script type="text/javascript" src="dwr/util.js"></script>
+    <script type="text/javascript" src="dwr/interface/CallAdsFuncs.js"></script>
+    <script type="text/javascript" src="JavaScript/timeclock.js"></script>
     <title>Hello, ExtJS.</title>
 </head>
 <body>

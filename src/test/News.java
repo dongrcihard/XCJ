@@ -3,9 +3,6 @@
  */
 package test;
 
-/**
- * Created by dongxl on 14-4-2.
- */
 public class News {
     //消息类的标识属性
     private int id;

@@ -19,6 +19,6 @@
     <title>Hello, ExtJS.</title>
 </head>
 <body>
-<h1>The first idea ExtJS job.</h1>
+    <h1>The first idea ExtJS job.</h1>
 </body>
 </html>

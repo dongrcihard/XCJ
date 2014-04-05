@@ -12,10 +12,10 @@ public class NewsManager {
     public static void main(String[] args) throws Exception {
         //实例化Configuration，这行代码默认加载hibernate.cfg.xml文件
         Configuration conf = new Configuration().configure();
-        ServiceRegistry  sr = new ServiceRegistryBuilder().applySettings(conf.getProperties()).buildServiceRegistry();
+        //新方法初始化SensssionFactory
+        ServiceRegistry sr = new ServiceRegistryBuilder().applySettings(conf.getProperties()).buildServiceRegistry();
         SessionFactory sf = conf.buildSessionFactory(sr);
         //以Configuration创建SessionFactory
-//        SessionFactory sf = conf.buildSessionFactory();
         //实例化Session
         Session sess = sf.openSession();
         //开始事务

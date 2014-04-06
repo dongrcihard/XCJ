@@ -1,5 +1,4 @@
 	Ext.onReady(function(){
-		Ext.QuickTip.init();//初始化提示;
 		var loginForm = Ext.create('Ext.form.Panel',{
 			title:'表单提交示例',
 			width : 230,
@@ -38,7 +37,7 @@
 		function login(){//提交表单
 			loginForm.getForm().submit({
 				clientValidation:true,//进行客户端验证
-				url : 'loginServer.jsp',//请求的url地址
+				url : 'index.jsp',//请求的url地址
 				method:'GET',//请求方式
 				success:function(form,action){//加载成功的处理函数
 					Ext.Msg.alert('提示','系统登陆成功');

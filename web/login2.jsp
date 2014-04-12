@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="ExtJS/resources/css/ext-all.css"/>
 <script type="text/javascript" src="ExtJS/ext-all.js"></script>
 <script type="text/javascript" src="ExtJS/ext-lang-zh_CN.js"></script>
-<script type="text/javascript" src="JavaScript/eed.js"></script>
+<script type="text/javascript" src="JavaScript/logee.js"></script>
 </head>
   <body>
   	<div id="loginForm"></div>

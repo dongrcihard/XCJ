@@ -65,7 +65,7 @@ Ext.onReady(function(){
 			 type:'submit',
 			 handler:function(){
 			 	form1.form.doAction('submit',{
-			 		            url:'user.action',
+                url:'user.action',
 	            method:'post',
 	            success:function(form,action){
 	                document.location="index.jsp";

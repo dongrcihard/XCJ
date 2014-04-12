@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="ExtJS/resources/css/ext-all.css"/>
     <script type="text/javascript" src="ExtJS/ext-all.js"></script>
     <script type="text/javascript" src="ExtJS/ext-lang-zh_CN.js"></script>
-    <%--<script type="text/javascript" src="JavaScript/eed.js"></script>--%>
+    <script type="text/javascript" src="JavaScript/comuse.js"></script>
     <title>欢迎光临高速清分专用设备实时远程专家诊断系统</title>
 </head>
 <body style="margin: 0; background-color: #013cc4">

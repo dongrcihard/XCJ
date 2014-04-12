@@ -23,41 +23,63 @@
 				allowBlank : false
 			}],
 			buttons:[{
-				text : '登陆',
+                text:"提交",
+                type:'submit',
                 handler:function(){
-                    loginForm.form.doAction('submit',{
-                        url:'user.action',
-                        method:'post',
-                        success:function(form,action){
-                            document.location="index.jsp";
-                            Ext.Msg.alert("添加成功！",action.result.message);
-                        },
-                        failure:function(form,action){
-                            Ext.Msg.alert("添加失败！",action.result.message);
+                    if(loginForm.getForm().isValid()) {
+                        Ext.MessageBox.show({
+                            title:'请等待',
+                            msg:'正在加载',
+                            progressText:'',
+                            width:300,
+                            progress:true,
+                            closable:'false',
+                            animEl:'loding'
+                        });
+                        var f = function(v){
+                            return function(){
+                                var i=v/11;
+                                Ext.MessageBox.updateProgress(i,'');
+                            }
                         }
-                    });
-                }
-
-    },{
+                        for(var i=1;i<33;i++){
+                            setTimeout(f(i),i*1500);
+                        }
+                        //提交到服务器操作
+                        loginForm.form.doAction('submit',{
+                            url:'login.action',
+                            method:'post',
+                            success:function(form,action){
+                                document.location="index.jsp";
+                                Ext.Msg.alert("登录成功！",action.result.message);
+                            },
+                            failure:function(form,action){
+                                Ext.Msg.alert("登录失败！",action.result.message);
+                            }
+                        });
+                    }
+            }},
+            {
 				text : '重置',
-				handler : reset
-			}]
+				handler :function() {
+                loginForm.getForm().reset();}}
+			]
 		});
 		//设定Panel居中显示
-		function login(){//提交表单
-			loginForm.form.doAction({
-//				clientValidation:true,//进行客户端验证
-				url : 'login.action',//请求的url地址
-				method:'POST',//请求方式
-				success:function(form,action){//加载成功的处理函数
-					Ext.Msg.alert('提示','系统登陆成功');
-				},
-				failure:function(form,action){//加载失败的处理函数
-					Ext.Msg.alert('提示','系统登陆失败，原因：'+action.failureType);
-				}
-			});
-		}
-		function reset(){//重置表单
-			loginForm.form.reset();
-		}
+//		function login(){//提交表单
+//			loginForm.form.doAction({
+////				clientValidation:true,//进行客户端验证
+//				url : 'login.action',//请求的url地址
+//				method:'POST',//请求方式
+//				success:function(form,action){//加载成功的处理函数
+//					Ext.Msg.alert('提示','系统登陆成功');
+//				},
+//				failure:function(form,action){//加载失败的处理函数
+//					Ext.Msg.alert('提示','系统登陆失败，原因：'+action.failureType);
+//				}
+//			});
+//		}
+//		function reset(){//重置表单
+//			loginForm.form.reset();
+//		}
 	});

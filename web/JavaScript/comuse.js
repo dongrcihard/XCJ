@@ -5,6 +5,7 @@ Ext.onReady(function(){
 	    labelWidth:40,
 	    baseCls:'x-plain',
 	    defaults:{width:180},
+        renderTo: Ext.get("loginWin"),
 	    items:[{
 	        xtype:'textfield',
 	        fieldLabel:"用户名",
@@ -59,7 +60,7 @@ Ext.onReady(function(){
 	        }},
 	        {text:"重置",
 	        handler:function() {
-	    		form1.getForm().reset();}
+            form1.getForm().reset();}
 	    	},
 	    	{text:"添加",
 			 type:'submit',

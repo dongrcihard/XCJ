@@ -19,31 +19,43 @@ public class UserAction extends ActionSupport {
 
     public String execute() throws Exception {
 
-        if(user.getUsername().equals("ad")&&user.getPassword().equals("ad")){
+       // if(user.getUsername().equals("ad")&&user.getPassword().equals("ad")){
             this.success= true;
             UserDAO userdao = new UserDAOImpl();
             try{
-                User u = new User();
+/*                User u = new User();
                 u.setUsername("dongxl");
                 u.setPassword("123");
                 userdao.save(u);
-                return SUCCESS;
-                /*boolean find = userdao.findUser(user);*/
-/*                if(!find){
-                    this.success = false;
-                    this.message="对不起，用户不存在";
-                }else{
-                    return SUCCESS;
-                }*/
+                return SUCCESS;*/
+//                    this.success = false;
+//                    this.message="对不起，用户不存在";
+                int find = userdao.findUser(user);
+                switch (find) {
+                    case 0:
+                        this.success = false;
+                        this.message = "对不起，数据库访问出错，请联系管理员。";
+                        break;
+                    case 1:
+                        this.success = false;
+                        this.message = "对不起，用户名错误";
+                        break;
+                    case 2:
+                        this.success = false;
+                        this.message = "对不起，密码错误";
+                        break;
+                    case 3:
+                        return SUCCESS;
+                }
             }catch(Exception e){
                 e.printStackTrace();
             }
             //fail("Not yet implemented");
             //this.message="你的账号是："+user.getUsername()+"密码是："+user.getPassword();
-        }else{
-            this.success=false;
-            this.message="对不起，未授权的用户不能登录改系统";
-        }
+        //}else{
+        //    this.success=false;
+        //    this.message="对不起，未授权的用户不能登录改系统";
+        //}
         return SUCCESS;
     }
 

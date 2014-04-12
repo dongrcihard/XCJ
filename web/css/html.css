@@ -1,4 +1,42 @@
+* {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
 a {
     font-size: 32px;
     font-weight: bold;
+}
+
+#header {
+    background-image: url("../image/top_bg.jpg");
+}
+
+#middle {
+    background: url("../image/middle_bg.jpg");
+    height: 420px;
+}
+
+#line {
+    position: relative;
+    top: 2px;
+}
+
+#mid_left {
+    position: relative;
+    top: 2px;
+}
+
+#middle #mid_left {
+
+}
+
+#bot_left {
+    display: table-cell;
+}
+
+#bottom #bot_right{
+    background: url("../image/bottom_bg2.jpg") repeat-x;
+    display: table-cell;
+    width: 100%;
 }

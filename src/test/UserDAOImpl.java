@@ -21,7 +21,7 @@ public class UserDAOImpl implements UserDAO{
             e.printStackTrace();
             tx.rollback();
         }finally{
-            HibernateUtil.closeSession();
+        HibernateUtil.closeSession();
         }
     }
 
@@ -31,7 +31,7 @@ public class UserDAOImpl implements UserDAO{
         Session session= HibernateUtil.getSession();	//生成Session实例
         Transaction tx = session.beginTransaction();	//创建Transaction实例
         try{
-            user=(User)session.get(User.class,id);			//使用Session的get方法获取指定id的用户到内存中
+            user=(User)session.get(User.class,id);		//使用Session的get方法获取指定id的用户到内存中
             tx.commit();								//提交事务
         } catch(Exception e){
             e.printStackTrace();
@@ -43,14 +43,21 @@ public class UserDAOImpl implements UserDAO{
     }
 
     //核对用户是否正确
-    public boolean findUser(User user){
+    public int findUser(User user){
         Session session= HibernateUtil.getSession();	//生成Session实例
         Transaction tx = session.beginTransaction();	//创建Transaction实例
         try{
             Query query=session.createQuery("from User where username = 'ad'");			//使用Session的get方法获取指定id的用户到内存中
             //tx.commit();								//提交事务
             User u = (User)query.uniqueResult();
-            return u.getUsername().equalsIgnoreCase(user.getUsername());
+            if (!u.getUsername().equalsIgnoreCase(user.getUsername())) {
+                return 1;
+            }
+            else if (!u.getPassword().equalsIgnoreCase(user.getPassword())) {
+                return 2;
+            }else {
+                return 3;
+            }
 
         } catch(Exception e){
             e.printStackTrace();
@@ -58,7 +65,7 @@ public class UserDAOImpl implements UserDAO{
         }finally{
             HibernateUtil.closeSession();				//关闭Session实例
         }
-        return false;
+        return 0;
     }
 
     //删除用户

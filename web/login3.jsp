@@ -8,5 +8,7 @@
 <script type="text/javascript" src="ExtJS/ext-lang-zh_CN.js"></script>
 <script type="text/javascript" src="JavaScript/comuse.js"></script>
 </head>
-<BODY  STYLE="margin: 10px"></BODY>
+<BODY  STYLE="margin: 10px">
+    <h1></h1>
+</BODY>
 </html>

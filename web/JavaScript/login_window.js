@@ -4,7 +4,7 @@ Ext.onReady(function () {
     /*创建窗口*/
     var form1 = Ext.create('Ext.form.Panel', {
         title: '用户登录窗口',
-        width: 260,
+        width: 263,
         height: 140,
         frame: true,
 //        labelWidth: 60,
@@ -32,7 +32,7 @@ Ext.onReady(function () {
         ],
         buttons: [
             {
-                text: "提交",
+                text: "登录",
                 type: 'submit',
                 handler: function () {
                     if (form1.getForm().isValid()) {
@@ -50,7 +50,7 @@ Ext.onReady(function () {
                                 var i = v / 11;
                                 Ext.MessageBox.updateProgress(i, '');
                             }
-                        }
+                        };
                         for (var i = 1; i < 33; i++) {
                             setTimeout(f(i), i * 1500);
                         }

@@ -60,6 +60,7 @@ a {
 /*修改ExtJS css的标题大小及文本属性*/
 .x-panel .x-panel-header-default-framed-top {
     height : 30px;
+    border-width: 1px 1px 1px 1px;
 }
 .x-panel-header-text-container-default-framed {
     font-size: 14px;

@@ -4,8 +4,8 @@ Ext.onReady(function () {
     /*创建窗口*/
     var form1 = Ext.create('Ext.form.Panel', {
         title: '用户登录窗口',
-        width: 255,
-        height: 130,
+        width: 260,
+        height: 140,
         frame: true,
 //        labelWidth: 60,
         minButtonWidth: 60,
@@ -24,8 +24,6 @@ Ext.onReady(function () {
             {
                 xtype: 'textfield',
                 fieldLabel: "密码",
-                fontSize: 30,
-                fontFamilies: "Microsoft YaHei",
                 allowBlank: false,
                 blankText: "密码不能为空!",
                 name: 'user.password',
@@ -72,8 +70,6 @@ Ext.onReady(function () {
                 }},
             {
                 text: "重置",
-                fontSize: 30,
-                fontFamilies: "Microsoft YaHei",
                 handler: function () {
                     form1.getForm().reset();
                 }

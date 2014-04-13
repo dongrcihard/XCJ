@@ -33,7 +33,7 @@ a {
 
 #middle #mid_left #loginWin{
     position: absolute;
-    top: 75px;
+    top: 70px;
     left: 610px;
 }
 
@@ -57,4 +57,8 @@ a {
 .x-btn-default-small-icon .x-btn-inner, .x-btn-default-small-noicon .x-btn-inner {
     font-size: 14px;
     font-weight: 600;
+}
+
+.x-panel .x-panel-header-default-framed-top {
+    height : 30px;
 }

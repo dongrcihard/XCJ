@@ -1,6 +1,7 @@
 /**
  * Created by dongxl on 14-4-3.
- */
+ *//*
+
 package test;
 
 public class News {
@@ -41,4 +42,4 @@ public class News {
     public void setContent(String content) {
         this.content = content;
     }
-}
+}*/

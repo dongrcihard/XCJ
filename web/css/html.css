@@ -80,3 +80,8 @@ a {
     margin-top: 10px;
     margin-left: -25px;
 }
+
+/*修改ExtJS css的提示框位置属性*/
+.x-form-invalid-icon {
+    margin: 8px -10px 0;
+}

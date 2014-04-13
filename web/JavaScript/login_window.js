@@ -4,7 +4,7 @@ Ext.onReady(function () {
     /*创建窗口*/
     var form1 = Ext.create('Ext.form.Panel', {
         title: '用户登录窗口',
-        width: 225,
+        width: 255,
         height: 130,
         frame: true,
 //        labelWidth: 60,
@@ -80,8 +80,6 @@ Ext.onReady(function () {
             },
             {
                 text: "添加",
-                fontSize: 30,
-                fontFamilies: "Microsoft YaHei",
                 type: 'submit',
                 handler: function () {
                     form1.form.doAction('submit', {

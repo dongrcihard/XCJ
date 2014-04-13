@@ -34,7 +34,7 @@ a {
 #middle #mid_left #loginWin{
     position: absolute;
     top: 75px;
-    left: 625px;
+    left: 610px;
 }
 
 
@@ -46,4 +46,15 @@ a {
     background: url("../image/bottom_bg2.jpg") repeat-x;
     display: table-cell;
     width: 100%;
+}
+
+/*修改ExtJS css*/
+.x-btn-default-small .x-btn-inner {
+    font-family: Microsoft YaHei,tahoma,arial,verdana,sans-serif;
+    color: red;
+}
+
+.x-btn-default-small-icon .x-btn-inner, .x-btn-default-small-noicon .x-btn-inner {
+    font-size: 14px;
+    font-weight: 600;
 }

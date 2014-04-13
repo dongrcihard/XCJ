@@ -73,24 +73,6 @@ Ext.onReady(function () {
                 handler: function () {
                     form1.getForm().reset();
                 }
-            },
-            {
-                text: "添加",
-                type: 'submit',
-                handler: function () {
-                    form1.form.doAction('submit', {
-                        url: 'user.action',
-                        method: 'post',
-                        success: function (form, action) {
-                            document.location = "index.jsp";
-                            Ext.Msg.alert("添加成功！", action.result.message);
-                        },
-                        failure: function (form, action) {
-                            Ext.Msg.alert("添加失败！", action.result.message);
-                        }
-                    });
-                }
-                //text:添加
             }
         ]
     });

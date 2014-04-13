@@ -49,16 +49,33 @@ a {
 }
 
 /*修改ExtJS css*/
+/*修改ExtJS css的按钮文本属性*/
 .x-btn-default-small .x-btn-inner {
     font-family: Microsoft YaHei,tahoma,arial,verdana,sans-serif;
     color: red;
-}
-
-.x-btn-default-small-icon .x-btn-inner, .x-btn-default-small-noicon .x-btn-inner {
     font-size: 14px;
     font-weight: 600;
 }
 
+/*修改ExtJS css的标题大小及文本属性*/
 .x-panel .x-panel-header-default-framed-top {
     height : 30px;
+}
+.x-panel-header-text-container-default-framed {
+    font-size: 14px;
+    padding: 2px 2px 1px 0;
+    font-family: microsoft yahei,tahoma,arial,verdana,sans-serif;
+}
+
+/*修改ExtJS css的标签文本属性*/
+.x-form-item-label {
+    color: #04408c;
+    font: normal 14px Microsoft yahei,tahoma,arial,verdana,sans-serif;
+    margin: 10px 10px 0 15px;
+}
+
+/*修改ExtJS css的文本框位置属性*/
+.x-form-text {
+    margin-top: 10px;
+    margin-left: -25px;
 }

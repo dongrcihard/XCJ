@@ -1,11 +1,11 @@
 Ext.onReady(function(){
+	Ext.QuickTips.init();
 	Ext.form.Field.prototype.msgTarget="side";
 
 	var form1=new Ext.FormPanel({
 	    labelWidth:40,
 	    baseCls:'x-plain',
 	    defaults:{width:180},
-        renderTo: Ext.get("loginWin"),
 	    items:[{
 	        xtype:'textfield',
 	        fieldLabel:"用户名",
@@ -49,7 +49,7 @@ Ext.onReady(function(){
 	            url:'login.action',
 	            method:'post',
 	            success:function(form,action){
-	                document.location="index.jsp";
+	                document.location="clk.jsp";
 	                Ext.Msg.alert("登录成功！",action.result.message);
 	            },
 	            failure:function(form,action){
@@ -60,16 +60,16 @@ Ext.onReady(function(){
 	        }},
 	        {text:"重置",
 	        handler:function() {
-            form1.getForm().reset();}
+	    		form1.getForm().reset();}
 	    	},
 	    	{text:"添加",
 			 type:'submit',
 			 handler:function(){
 			 	form1.form.doAction('submit',{
-                url:'user.action',
+			 		            url:'user.action',
 	            method:'post',
 	            success:function(form,action){
-	                document.location="index.jsp";
+	                document.location="a.html";
 	                Ext.Msg.alert("添加成功！",action.result.message);
 	            },
 	            failure:function(form,action){

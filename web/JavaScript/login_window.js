@@ -8,8 +8,8 @@ Ext.onReady(function () {
         height: 140,
         frame: true,
 //        labelWidth: 60,
-        minButtonWidth: 60,
-        buttonAlign: "center",
+        minButtonWidth: 80,
+        buttonAlign: "left",
         renderTo: Ext.get("loginWin"),
 //        defaults: {width: 180},
         items: [
@@ -34,6 +34,7 @@ Ext.onReady(function () {
             {
                 text: "登录",
                 type: 'submit',
+                margin: '0 0 0 20px',
                 handler: function () {
                     if (form1.getForm().isValid()) {
                         Ext.MessageBox.show({
@@ -60,16 +61,26 @@ Ext.onReady(function () {
                             method: 'post',
                             success: function (form, action) {
                                 document.location = "index.jsp";
-                                Ext.Msg.alert("登录成功！", action.result.message);
+                                Ext.MessageBox.show({
+                                    title: "登录成功！",
+                                    msg: action.result.message,
+                                    icon: Ext.MessageBox.INFO
+                                });
                             },
                             failure: function (form, action) {
-                                Ext.Msg.alert("登录失败！", action.result.message);
+                                Ext.MessageBox.show({
+                                    title: "登录失败！",
+                                    msg: action.result.message,
+                                    buttons: Ext.MessageBox.OK,
+                                    icon: Ext.MessageBox.ERROR
+                                });
                             }
                         });
                     }
                 }},
             {
                 text: "重置",
+                margin: '0 0 0 35px',
                 handler: function () {
                     form1.getForm().reset();
                 }

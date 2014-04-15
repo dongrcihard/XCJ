@@ -1,10 +1,7 @@
 package test;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.*;
 
 import java.util.List;
 
@@ -47,18 +44,20 @@ public class UserDAOImpl implements UserDAO{
         Session session= HibernateUtil.getSession();	//生成Session实例
         Transaction tx = session.beginTransaction();	//创建Transaction实例
         try{
-            Query query=session.createQuery("from User where username = 'ad'");			//使用Session的get方法获取指定id的用户到内存中
-            //tx.commit();								//提交事务
-            User u = (User)query.uniqueResult();
-            if (!u.getUsername().equalsIgnoreCase(user.getUsername())) {
-                return 1;
+            List list = session.createQuery("from User where username like :username").setParameter("username", user.getUsername()).list();			//使用Session的get方法获取指定id的用户到内存中
+            switch (list.size()) {
+                case 0:
+                    return 1;   //用户名错误
+                case 1:
+                    User u = (User)list.get(0);
+                    if (!u.getPassword().equalsIgnoreCase(user.getPassword())) {
+                        return 2;   //用户名错误
+                    } else {
+                        return 3;   //登录正确
+                    }
+                default:
+                    return 4;   //表示同名用户存在，数据库错误
             }
-            else if (!u.getPassword().equalsIgnoreCase(user.getPassword())) {
-                return 2;
-            }else {
-                return 3;
-            }
-
         } catch(Exception e){
             e.printStackTrace();
             tx.rollback();								//回滚事务

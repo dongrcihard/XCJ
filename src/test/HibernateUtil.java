@@ -5,27 +5,8 @@ import org.hibernate.cfg.*;
 
 public class HibernateUtil {
 	
-	/*
-	//This program is ok.
-	private static final SessionFactory sessionFactory;
-	static{
-		try {
-			// Create the SessionFactory from hibernate.cfg.xml
-			sessionFactory = new AnnotationConfiguration().configure()
-					.buildSessionFactory();
-		} catch (Throwable ex) {
-			System.err.println("Initial SessionFactory creation failed." + ex);
-			throw new ExceptionInInitializerError(ex);
-		}
-	}
-
-	public static SessionFactory getSessionFactory() {
-		return sessionFactory;
-	}
-	*/
-
     private static SessionFactory sessionFactory;
-    private  static Configuration configuration = new Configuration();
+    private static Configuration configuration = new Configuration();
     //创建线程局部变量threadLocal，用来保存Hibernate的Session
     private static final ThreadLocal<Session> threadLocal = new ThreadLocal<Session>();
     //使用静态代码块初始化Hibernate
@@ -43,7 +24,7 @@ public class HibernateUtil {
     }
     //获得ThreadLocal 对象管理的Session实例.
     public static Session getSession() throws HibernateException {
-        Session session = (Session) threadLocal.get();
+        Session session = threadLocal.get();
         if (session == null || !session.isOpen()) {
             if (sessionFactory == null) {
                 rebuildSessionFactory();
@@ -58,7 +39,7 @@ public class HibernateUtil {
     //关闭Session实例
     public static void closeSession() throws HibernateException {
         //从线程局部变量threadLocal中获取之前存入的Session实例
-        Session session = (Session) threadLocal.get();
+        Session session = threadLocal.get();
         threadLocal.set(null);
         if (session != null) {
             session.close();

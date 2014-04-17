@@ -32,7 +32,7 @@ Ext.onReady(function () {
         ],
         buttons: [
             {
-                text: "登录",
+                text: '<div style="color: red">登  录</div>',
                 type: 'submit',
                 margin: '0 0 0 20px',
                 handler: function () {
@@ -79,7 +79,7 @@ Ext.onReady(function () {
                     }
                 }},
             {
-                text: "重置",
+                text: '<div style="color: #04408c">重  置</div>',
                 margin: '0 0 0 35px',
                 handler: function () {
                     form1.getForm().reset();

@@ -36,6 +36,7 @@
         <div id="bottom">
             <div id="bot_left">
                 <img src="image/bottom_bg.jpg"/>
+                <span id="copyright">版权归属:中国印钞造币总公司技术中心 Copyright©2013 CBPMC All Rights Reserved</span>
             </div>
             <div id="bot_right"></div>
         </div>

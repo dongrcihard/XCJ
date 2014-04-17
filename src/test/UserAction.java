@@ -28,12 +28,18 @@ public class UserAction extends ActionSupport {
                     this.success = false;
                     this.message = "对不起，密码错误";
                     break;
-                case 3:
+                case 4:
+                    this.success = false;
+                    this.message = "对不起，同名用户存在，请联系管理员";
+                    break;
+                default:
+                    HibernateUtil.shutdown();
                     return SUCCESS;
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+        HibernateUtil.shutdown();
         return SUCCESS;
     }
 

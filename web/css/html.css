@@ -31,7 +31,7 @@ a {
     float: left;
 }
 
-#middle #mid_left #loginWin{
+#middle #mid_left #loginWin {
     position: absolute;
     top: 70px;
     left: 610px;
@@ -42,17 +42,23 @@ a {
     display: table-cell;
 }
 
-#bottom #bot_right{
+#bottom #bot_right {
     background: url("../image/bottom_bg2.jpg") repeat-x;
     display: table-cell;
     width: 100%;
+}
+
+#bottom #copyright {
+    position: relative;
+    left: 400px;
+    top: -60px;
+    color: #ccc;
 }
 
 /*修改ExtJS css*/
 /*修改ExtJS css的按钮文本属性*/
 .x-btn-default-small .x-btn-inner {
     font-family: Microsoft YaHei,tahoma,arial,verdana,sans-serif;
-    color: red;
     font-size: 14px;
     font-weight: 600;
 }

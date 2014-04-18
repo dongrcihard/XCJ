@@ -17,7 +17,6 @@
 	</property>
 	<property name="hibernate.show_sql">true</property>
 	<property name="hibernate.hbm2ddl.auto">update</property>
-	<mapping resource="NewMapping.hbm.xml" />
-	<mapping resource="User.hbm.xml" />
+	<mapping resource="dao/User.hbm.xml" />
 </session-factory>
 </hibernate-configuration>
